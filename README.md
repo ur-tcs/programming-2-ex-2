@@ -15,7 +15,7 @@ def fac(n:Int):Int={
 ??? 
 }
 ```
-After you replaced the `???` by the correct code you might run `compile` and `testOnly -- "*fac*"`. In this case this will test if fac(6)==6*5*4*3*2*1. In particular a correct test does not necessarily mean that you implemented the correct function (you might also pass the test by replacing `???` by `720`).
+After you replaced the `???` by the correct code you might run `compile` and `testOnly -- "*fac*"`. In this case this will test if fac(6)==6 * 5 * 4 * 3 * 2 * 1. In particular a correct test does not necessarily mean that you implemented the correct function (you might also pass the test by replacing `???` by `720`).
 
 Note that the syntax of scala does not require to specify the return type of the function, but for your convenience we already gave it.
 Furthermore the curly braces are not necessary to mark the body of the function if you have the right spacing.
