@@ -1,7 +1,6 @@
 # Programming-2-Exercise-2
 In this exercise you will learn about structural recursion and classes in scala.
 * As in the first exercise you need to obtain the exercise files. Clone or fork the repository: `git clone https://github.com/ur-tcs/programming-2-ex-2.git` or download it by clicking on the green `<code>` button and select `download`
-* Note that the files also include the `recursion` package, where the frequently used classes for the exercises are defined. Those have to be imported, which is done by the command `import recursion.*`at the beginning of our file. `.*`means that the whole directory should be imported.
 ## Structural Recursion
 * We provide the signature of the functions you need to write in the exercise files. The body is replaced with ???: that’s the part you need to come up with!
 + The exercise files are found in the folder `recursion_and_classes/src/main/scala/recursion`. The Exercises are those files which start with `Ex` (for exercise), sorted by the type of structure you will work on. The files `IntList.scala` and `IntTree.scala` should **stay unchanged**. They define the necessary classes you will work on in the exercises.
