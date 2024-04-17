@@ -210,6 +210,7 @@ We encourage you to test your program by yourself. A good playground could be ag
 <details>
 <summary> Hint: Which classes and traits should I define </summary>
 The following is **one** of many solutions to this question:
+
 + an abstract class Geometric for all of our classes
 + traits planar for circle and square, and spatial for the cube (and a possible ball) which all extend Geometric
 + classes square, circle and ball which are all subclasses of Geometric and have the natural traits.
@@ -248,13 +249,14 @@ trait rectangular extends Geometric :
 </details><br/>
 
 <details>
-<summary> Hint: How to implement `approxPi` </summary>
-Since approxPi should play the role of a static variable in Java, we put it into a companion object for our class circle. That is, we create an object with the same name like the class and define a private variable `approxPi` in it, that we can only change with some methods defined in our companion object. Note that the companion object does know the variables of circle (e.g. the diameter) and vice versa.
+<summary> Hint: How to implement approxPi </summary>
+Since approxPi should play the role of a static variable in Java, we put it into a companion object for our class circle. That is, we create an object with the same name like the class and define a private variable approxPi in it, that we can only change with some methods defined in our companion object. Note that the companion object does know the variables of circle (e.g. the diameter) and vice versa.
 
 To be precise your companion object should look something like this:
 ```scala
 object circle {
-  private var app_pi = ??? //private because we don't want to accidentally change it and var because we want to be able to change it through methods
+  private var approxPi = ??? /*private because we don't want to accidentally change it
+                    and var because we want to be able to change it through methods*/
   def setPi(???) = ??? //some method that gives us the possibility to change approxPi
 }
 ```
