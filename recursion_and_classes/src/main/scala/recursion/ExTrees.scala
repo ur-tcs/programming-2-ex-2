@@ -11,7 +11,7 @@ You definetely don't need to implement all the functions to get a good understan
 The size of a tree is the number of nodes it contains.*/
 
 def treeSize(t: IntTree): Int ={
-  
+  ???  
 }
 
 /*Implement a function that computes the depth of an IntTree.
@@ -21,20 +21,20 @@ between the root and a leaf. The example tree on the git repository has a depth 
 //To find the largest of two integers, you can use the scala.math.max function.
 
 def treeDepth(t: IntTree): Int ={
-  
+  ???  
 }
 
 /*Implement a function that computes the sum of all values in an IntTree,
 similarly to the sum function for IntLists:*/
 
 def treeSum(t: IntTree): Int ={
-  
+  ???  
 }
 
 //Implement a function that increases each value in an IntTree by one:
 
 def treeIncrement(t: IntTree): IntTree ={
-  
+  ???  
 }
 
 /*Implement a function that creates a string containing all values in an IntTree,
@@ -61,7 +61,7 @@ val res24: String = 3
 In Scala, like in Java, line breaks in strings are represented by the \n characters.*/
 
 def treeShow(t: IntTree): String ={
-  
+  ???  
 }
 
 /*How would you modify your function to collect the values in post-order?

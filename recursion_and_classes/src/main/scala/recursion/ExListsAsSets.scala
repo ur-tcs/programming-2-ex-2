@@ -10,14 +10,14 @@ You definetely don't need to implement all the functions to get a good understan
 //Write a contains(l, n) function that checks whether list l contains value n:
 
 def contains(l: IntList, n: Int): Boolean ={
-  
+  ???  
 }
 
 //Write an isSubset(l, L) function that checks whether list l is a subset of list L (that is, all elements of l are also contained in L):
 //You can use contains from above for this
 
 def isSubset(l: IntList, L: IntList): Boolean ={
-  
+  ???  
 }
 
 /*Write an intersection(l, L) function that constructs a new list 
@@ -26,7 +26,7 @@ but with all elements not contained in L removed:*/
 //You can use contains from above for this
 
 def intersection(l: IntList, L: IntList): IntList ={
-  
+  ???  
 }
 
 /*Write a difference(l, L) function that constructs a new list
@@ -35,5 +35,5 @@ but with all elements contained in L removed:*/
 //You can use contains from above for this
 
 def difference(l: IntList, L: IntList): IntList ={
-  
+  ???  
 }

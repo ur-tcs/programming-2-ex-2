@@ -10,10 +10,7 @@ You definetely don't need to implement all the functions to get a good understan
 //Implement a function that computes the length of a string:
 
 def stringLength(s: String): Int ={
-  if s.isEmpty then
-    0
-  else
-    1+stringLength(s.tail)
+  ???
 }
 
 /*Implement a function that capitalizes every character in a string:
@@ -27,10 +24,7 @@ val res31: String = c
 */
 
 def capitalizeString(s: String): String ={
-  if s.isEmpty then
-    ""
-  else 
-    s.head.toUpper.toString + capitalizeString(s.tail)
+  ???
 }
 
 /*Implement a function that checks if a string is blank (i.e., if it only contains whitespace characters or is empty):
@@ -44,12 +38,7 @@ val res30: Boolean = true
 */
 
 def isBlank(s: String): Boolean ={
-  if s.isEmpty then
-    true
-  else if s.head.isWhitespace then
-    isBlank(s.tail)
-  else 
-    false
+  ???
 }
 
 /*In this exercise, we call “word” any sequence of non-whitespace characters.
@@ -70,21 +59,9 @@ and returns the corresponding suffix
 
 def wordCount(s: String): Int ={
   def discardWord(x:String): String={
-    if x.isEmpty then
-      ""
-    else 
-      if x.head.isWhitespace then
-        x
-      else
-        discardWord(x.tail)
+    ???  
   }
-  if s.isEmpty then
-    0
-  else 
-    if s.head.isWhitespace then
-      wordCount(s.tail)
-    else
-      1+wordCount(discardWord(s.tail))
+    ???
 }
 
 /*Implement a function that encrypts a string using the Caesar cipher method.
@@ -143,17 +120,11 @@ Implement the caesarCipher function accordingly:
 */
 
 def caesarCipher(s: String, shift: Int): String ={
-  if s.isEmpty then
-    ""
-  else 
-    ((s.head.toInt + shift - 97) % 26 + 97).toChar.toString + caesarCipher(s.tail,shift)
+  ???
 }
 
 //Implement a function that reverses a string:
 
 def reverseString(s: String): String ={
-  if s.isEmpty then
-    ""
-  else 
-    reverseString(s.tail) + s.head.toString
+  ???
 }
