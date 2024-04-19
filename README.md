@@ -189,19 +189,19 @@ In this exercises you will get familiar with (abstract) classes, traits, compani
 
 We want to construct a class hierarchy on some geometric objects, namely circles, squares and cubes. Before we guide you through the exercise, here is what we want in the end. You may try to implement this without further reading.
 
-+ Three classes: circle, square and cube
-+ Each class should have a dimension, a diameter (diameter of circle or diagonal for square and cube) and should be able to compute their volume (for two dimensional objects we mean their area by volume)
++ Three classes: `Circle`, `Square` and `Cube`
++ Each class should have a dimension, a diameter (diameter for circle or diagonal for square and cube) and should be able to compute their volume (for two dimensional objects we mean their area by volume)
 + Clearly some of these objects share some properties. You should try to implement this via traits and/or abstract classes
-+ In order to compute the area of the circle, we don't want to use the "exact" value of Pi, but instead create our own constant `approxPi`. This should be equal to all objects of the class circle, but we should be able to change the value uniformly.
-+ For every geometric object we would like to have a method quadrature, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if circ1 is an object of the class circle, then circ1.quadrature() returns a square with the same surface as circ1.
-+ As a Bonus you can implement another class `ball` analogously to circle. At least you should keep the right traits in mind such that such an extension is easily possible.
++ In order to compute the area of a circle, we don't want to use the "exact" value of Pi, but instead create our own constant `approxPi`. This should be equal to all objects of the class `Circle`, but we should be able to change the value uniformly.
++ For every geometric object we would like to have a method `quadrature`, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if circ1 is an object of the class `Circle`, then `circ1.quadrature()` returns a square with the same surface as circ1.
++ As a Bonus you can implement another class `Ball` analogously to circle. At least you should keep the right traits in mind such that such an extension is easily possible.
 
 Here are some useful tools for this exercise:
 ```scala
 Math.Pi //will give you the exact value of Pi
 Math.pow(base,exponent) //this is the exponentiation function in scala
 Math.sqrt(x) //the square root
-math.round(x*Math.pow(10,n))/Math.pow(10,n)// this will round the value x to n decimals
+Math.round(x*Math.pow(10,n))/Math.pow(10,n)// this will round the value x to n decimals
 length = diameter/(Math.sqrt(n)) //connection between length and diameter in an n-dimensional cube
 ```
 
@@ -209,11 +209,11 @@ We encourage you to test your program by yourself. A good playground could be ag
 
 <details>
 <summary> Hint: Which classes and traits should I define </summary>
-The following is **one** of many solutions to this question:
+The following is one of many solutions to this question:
 
-+ an abstract class Geometric for all of our classes
-+ traits planar for circle and square, and spatial for the cube (and a possible ball) which all extend Geometric
-+ classes square, circle and ball which are all subclasses of Geometric and have the natural traits.
++ an abstract class `Geometric` for all of our classes
++ traits `planar` for `Circle` and `Square`, and `Spatial` for `Cube` (and a possible `Ball`) which all extend `Geometric`
++ classes `Square`, `Circle` and `Cube` which are all subclasses of `Geometric` and have the natural traits.
 </details><br/>
 
 <details>
@@ -227,19 +227,19 @@ abstract class Geometric:
   def volume(): Double
 ```
 
-The traits planar and spatial tell you in which dimension you are (so this is fixed in these traits), furthermore they can already decide which type your quadrature method should have (square for the two dimensional and cube for the three dimensional case)
+The traits `planar` and `spatial` tell you in which dimension you are (so this is fixed in these traits), furthermore they can already decide which type your `quadrature` method should have (`Square` for the two dimensional and `Cube` for the three dimensional case)
 
 ```scala
 trait planar extends Geometric:
   def dimension = 2
-  def quadrature(): square
+  def quadrature(): Square
 
 trait spatial extends Geometric:
   def dimension = 3
-  def quadrature(): cube
+  def quadrature(): Cube
 ```
 
-Because square and cube have an easy way to compute their volume we may implement this in our rectangular trait, which has access to a dimension as it extends Geometric. It might be useful to define an extra value length.
+Because `Square` and `Cube` have an easy way to compute their volume we may implement this in our `rectangular` trait, which has access to a dimension as it extends Geometric. It might be useful to define an extra value `length`.
 
 ```scala
 trait rectangular extends Geometric :
@@ -250,7 +250,8 @@ trait rectangular extends Geometric :
 
 <details>
 <summary> Hint: How to implement approxPi </summary>
-Since approxPi should play the role of a static variable in Java, we put it into a companion object for our class circle. That is, we create an object with the same name like the class and define a private variable approxPi in it, that we can only change with some methods defined in our companion object. Note that the companion object does know the variables of circle (e.g. the diameter) and vice versa.
+
+Since `approxPi` should play the role of a static variable in Java, we put it into a companion object for our class `Circle`. That is, we create an object with the same name like the class and define a private variable `approxPi` in it, that we can only change with some methods defined in our companion object. Note that the companion object does know the variables of circle (e.g. the diameter) and vice versa.
 
 To be precise your companion object should look something like this:
 ```scala
