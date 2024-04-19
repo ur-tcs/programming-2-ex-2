@@ -17,8 +17,10 @@ In order to get this done we need a help function hfac that gets called from our
 def nfac(n:Int):Int={
   def hfac(n:Int,acc:Int):Int={
       //What could be the role of acc?
+      ???
   }
   //With which parameters do you need to call hfac now?
+  ???
 }
 
 //recursion on lists
