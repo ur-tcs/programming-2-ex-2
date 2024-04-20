@@ -247,9 +247,9 @@ trait Spatial extends Geometric:
 Because `Square` and `Cube` have an easy way to compute their volume we may implement this in our `rectangular` trait, which has access to a dimension as it extends Geometric. It might be useful to define an extra value `length`.
 
 ```scala
-trait rectangular extends Geometric :
+trait Rectangular extends Geometric:
   def length = diameter/(Math.sqrt(dimension))
-  def volume(): Double = Math.pow(length, dimension)
+  def volume: Double = Math.pow(length, dimension)
 ```
 </details><br/>
 
