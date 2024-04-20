@@ -67,7 +67,9 @@ scala> oneTwo.tail.tail.isEmpty
 val res8: Boolean = true
 ```
 
-The last exercise on recursion on Lists is a bit intermediate: **Polish Notation**
+**Polish Notation**
+ 
+The last exercise on recursion on lists is a bit more advanced that the previous ones.
 
 Polish Notation (PN) is a way to write arithmetic expressions where every operator comes before its operands. For example, instead of writing `3 + 4`, you would write `+ 3 4`.
 
