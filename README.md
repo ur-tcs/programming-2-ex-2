@@ -262,7 +262,7 @@ Since `approxPi` should play the role of a static variable in Java, we put it in
 
 To be precise your companion object should look something like this:
 ```scala
-object circle {
+object Circle {
   val approxPi = ???
 }
 ```
