@@ -223,7 +223,7 @@ The following is one of many solutions to this question:
 
 <details>
 <summary> Hint: Which classes/traits should contain which variables/methods </summary>
-Since every geometric object in our case should have a diameter, dimension and volume, those are to define in the abstract class Geometric:
+Since every geometric object in our case should have a diameter, dimension and volume, those are defined in the abstract class Geometric:
 
 ```scala
 abstract class Geometric:
@@ -232,7 +232,7 @@ abstract class Geometric:
   def volume: Double // for two-dimensional objects, volume is interpreted as the area
 ```
 
-The traits `planar` and `spatial` tell you in which dimension you are (so this is fixed in these traits), furthermore they can already decide which type your `quadrature` method should have (`Square` for the two dimensional and `Cube` for the three dimensional case)
+The traits `planar` and `spatial` tell you in which dimension you are; so the value of `dimension` is fixed in these traits. Furthermore, the traits can already decide which type the `quadrature` method should have: `Square` for the two dimensional and `Cube` for the three dimensional case.
 
 ```scala
 trait Planar extends Geometric:
@@ -244,7 +244,7 @@ trait Spatial extends Geometric:
   def quadrature: Cube
 ```
 
-Because `Square` and `Cube` have an easy way to compute their volume we may implement this in our `rectangular` trait, which has access to a dimension as it extends Geometric. It might be useful to define an extra value `length`.
+Because `Square` and `Cube` have an easy way to compute their volume, we may implement this in our `Rectangular` trait, which has access to a dimension as it extends `Geometric`. It might be useful to define an extra value `length`.
 
 ```scala
 trait Rectangular extends Geometric:
@@ -252,7 +252,7 @@ trait Rectangular extends Geometric:
   def volume: Double = Math.pow(length, dimension)
 ```
 
-Note that we can define classes that combine `Planar` or `Spatial` with `Rectangular`.
+Note that we can now define classes that combine `Planar` or `Spatial` with `Rectangular`.
 </details><br/>
 
 <details>
