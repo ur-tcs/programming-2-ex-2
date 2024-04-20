@@ -197,8 +197,8 @@ We want to construct a class hierarchy of some geometric objects, namely circles
 + We want to implement three classes: `Circle`, `Square` and `Cube`.
 + Each class should have a dimension, a diameter (diameter for circle or diagonal for square and cube) and should be able to compute their area or volume.
 + Clearly some of these objects share some properties. The goal is to model the shared aspects via traits and/or abstract classes
-+ In order to compute the area of a circle, we don't want to use the "exact" value of pi, but instead create our own constant `approxPi`. This value should be equal for all objects of the class `Circle`, but we should be able to change the value uniformly by just modifying one line of code..
-+ For every geometric object we would like to have a method `quadrature`, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if `circ1` is an object of the class `Circle`, then `circ1.quadrature()` returns a square with the same surface as circ1.
++ In order to compute the area of a circle, we don't want to use the "exact" value of pi, but instead create our own constant `approxPi`. This value should be equal for all objects of the class `Circle`, but we should be able to change the value uniformly by just modifying one line of code.
++ For every geometric object we would like to have a method `quadrature`, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if `circ1` is an object of the class `Circle`, then `circ1.quadrature` returns a square with the same surface as circ1.
 + As a bonus you can implement another class `Ball` analogously to circle. At least you should keep the right traits in mind such that such an extension is easily possible.
 
 Here are some useful tools for this exercise:
@@ -260,7 +260,7 @@ Note that we can define classes that combine `Planar` or `Spatial` with `Rectang
 
 Since `approxPi` should play the role of a static variable in Java, we put it into a companion object for our class `Circle`. That is, we create an object with the same name like the class and define a variable `approxPi` in it.
 
-To be precise your companion object should look something like this:
+To be precise, your companion object could look something like this:
 ```scala
 object Circle {
   val approxPi = ???
@@ -277,7 +277,7 @@ def printList(s : StringList) : String =
   if s.isLast then 
     s.current
   else 
-    s.current + " " + printList(s.rest)
+    s.current + printList(s.rest)
   end if
 }
 ```
