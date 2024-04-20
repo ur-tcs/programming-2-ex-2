@@ -251,9 +251,9 @@ trait Rectangular extends Geometric:
   def length = diameter/(Math.sqrt(dimension))
   def volume: Double = Math.pow(length, dimension)
 ```
-</details><br/>
 
 Note that we can define classes that combine `Planar` or `Spatial` with `Rectangular`.
+</details><br/>
 
 <details>
 <summary> Hint: How to implement approxPi </summary>
