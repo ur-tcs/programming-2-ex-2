@@ -184,7 +184,7 @@ val res29: Boolean = true
 
 Note the type of the `head` method: it returns a Char, not a String. A Char is a single character, whereas a String is a sequence of characters. A String is surrounded by double quotes (e.g. "This is a String"), whereas a Char is surrounded by single quotes (e.g. 'c').
 
-For the corresponding exercies, you must not use any other method than `isEmpty`, `head` and `tail` on strings.
+For the respective exercises, you must not use any other method than `isEmpty`, `head` and `tail` on strings.
 
 ## Classes
 
