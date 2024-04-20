@@ -232,7 +232,7 @@ abstract class Geometric:
   def volume: Double // for two-dimensional objects, volume is interpreted as the area
 ```
 
-The traits `planar` and `spatial` tell you in which dimension you are; so the value of `dimension` is fixed in these traits. Furthermore, the traits can already decide which type the `quadrature` method should have: `Square` for the two dimensional and `Cube` for the three dimensional case.
+The traits `Planar` and `Spatial` tell you in which dimension you are; so the value of `dimension` is fixed in these traits. Furthermore, the traits can already decide which type the `quadrature` method should have: `Square` for the two dimensional and `Cube` for the three dimensional case.
 
 ```scala
 trait Planar extends Geometric:
@@ -282,7 +282,7 @@ def printList(s : StringList) : String =
 }
 ```
 The above functions will return "Make this sentence syntax." for the input " `First("make",Next("this", Next("sentence", Next("syntax",Last()))))`. By the choice of this minimal working example you will necessarily need to define at least the following:
- + classes First, Next, Last
+ + classes `First`, `Next`, `Last`
  + a method `isLast`
  + values `current` and `rest` for the class `StringList`
 
