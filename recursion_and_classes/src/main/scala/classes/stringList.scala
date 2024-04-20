@@ -15,7 +15,7 @@ def printList(s : StringList) : String =
   if s.isLast then 
     s.current
   else 
-    s.current + " " + printList(s.rest)
+    s.current + printList(s.rest)
   end if
 
 /**

@@ -197,7 +197,7 @@ We want to construct a class hierarchy of some geometric objects, namely circles
 + We want to implement three classes: `Circle`, `Square` and `Cube`.
 + Each class should have a dimension, a diameter (diameter for circle or diagonal for square and cube) and should be able to compute their area or volume.
 + Clearly some of these objects share some properties. The goal is to model the shared aspects via traits and/or abstract classes
-+ In order to compute the area of a circle, we don't want to use the "exact" value of pi, but instead create our own constant `approxPi`. This value should be equal for all objects of the class `Circle`, but we should be able to change the value uniformly.
++ In order to compute the area of a circle, we don't want to use the "exact" value of pi, but instead create our own constant `approxPi`. This value should be equal for all objects of the class `Circle`, but we should be able to change the value uniformly by just modifying one line of code..
 + For every geometric object we would like to have a method `quadrature`, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if `circ1` is an object of the class `Circle`, then `circ1.quadrature()` returns a square with the same surface as circ1.
 + As a bonus you can implement another class `Ball` analogously to circle. At least you should keep the right traits in mind such that such an extension is easily possible.
 
@@ -253,17 +253,17 @@ trait Rectangular extends Geometric:
 ```
 </details><br/>
 
+Note that we can define classes that combine `Planar` or `Spatial` with `Rectangular`.
+
 <details>
 <summary> Hint: How to implement approxPi </summary>
 
-Since `approxPi` should play the role of a static variable in Java, we put it into a companion object for our class `Circle`. That is, we create an object with the same name like the class and define a private variable `approxPi` in it, that we can only change with some methods defined in our companion object. Note that the companion object does know the variables of circle (e.g. the diameter) and vice versa.
+Since `approxPi` should play the role of a static variable in Java, we put it into a companion object for our class `Circle`. That is, we create an object with the same name like the class and define a variable `approxPi` in it.
 
 To be precise your companion object should look something like this:
 ```scala
 object circle {
-  private var approxPi = ??? /*private because we don't want to accidentally change it
-                    and var because we want to be able to change it through methods*/
-  def setPi(???) = ??? //some method that gives us the possibility to change approxPi
+  val approxPi = ???
 }
 ```
 </details><br/>
@@ -273,12 +273,12 @@ object circle {
 We want to construct a class `stringList` that represents a sentence as a list of strings. A string list should be filled with strings and automatically saved as a sentence, such that the following function returns the content as syntactically correct sentence in the sense that the first word starts with a capital letter, the words are separated by whitespaces and the sentence ends with a point.
 
 ```scala
-def printList(s:StringList):String ={
-  if s.isLast then
+def printList(s : StringList) : String =
+  if s.isLast then 
     s.current
-  else{ 
-    s.current + printList(s.rest)
-  }
+  else 
+    s.current + " " + printList(s.rest)
+  end if
 }
 ```
 The above functions will return "Make this sentence syntax." for the input " `First("make",Next("this", Next("sentence", Next("syntax",Last()))))`. By the choice of this minimal working example you will necessarily need to define at least the following:
