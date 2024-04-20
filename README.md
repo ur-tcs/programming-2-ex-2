@@ -184,40 +184,40 @@ val res29: Boolean = true
 
 Note the type of the `head` method: it returns a Char, not a String. A Char is a single character, whereas a String is a sequence of characters. A String is surrounded by double quotes (e.g. "This is a String"), whereas a Char is surrounded by single quotes (e.g. 'c').
 
-For the corresponding exercies, you cannot use any other method than `isEmpty`, `head` and `tail` on strings.
+For the corresponding exercies, you must not use any other method than `isEmpty`, `head` and `tail` on strings.
 
 ## Classes
 
-In this exercises you will get familiar with (abstract) classes, traits, companion Objects, etc.
+In this exercises you will get familiar with (abstract) classes, traits, companion objects, etc.
 
 ### Geometric Objects
 
-We want to construct a class hierarchy on some geometric objects, namely circles, squares and cubes. Before we guide you through the exercise, here is what we want in the end. You may try to implement this without further reading.
+We want to construct a class hierarchy of some geometric objects, namely circles, squares and cubes. Before we guide you through the exercise, here is what we want to implement in the end. You may try to implement this without further reading.
 
-+ Three classes: `Circle`, `Square` and `Cube`
-+ Each class should have a dimension, a diameter (diameter for circle or diagonal for square and cube) and should be able to compute their volume (for two dimensional objects we mean their area by volume)
-+ Clearly some of these objects share some properties. You should try to implement this via traits and/or abstract classes
-+ In order to compute the area of a circle, we don't want to use the "exact" value of Pi, but instead create our own constant `approxPi`. This should be equal to all objects of the class `Circle`, but we should be able to change the value uniformly.
-+ For every geometric object we would like to have a method `quadrature`, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if circ1 is an object of the class `Circle`, then `circ1.quadrature()` returns a square with the same surface as circ1.
-+ As a Bonus you can implement another class `Ball` analogously to circle. At least you should keep the right traits in mind such that such an extension is easily possible.
++ We want to implement three classes: `Circle`, `Square` and `Cube`.
++ Each class should have a dimension, a diameter (diameter for circle or diagonal for square and cube) and should be able to compute their area or volume.
++ Clearly some of these objects share some properties. The goal is to model the shared aspects via traits and/or abstract classes
++ In order to compute the area of a circle, we don't want to use the "exact" value of pi, but instead create our own constant `approxPi`. This value should be equal for all objects of the class `Circle`, but we should be able to change the value uniformly.
++ For every geometric object we would like to have a method `quadrature`, which returns a cubic object with the same volume as the original one (with respect to `approxPi`), e.g. if `circ1` is an object of the class `Circle`, then `circ1.quadrature()` returns a square with the same surface as circ1.
++ As a bonus you can implement another class `Ball` analogously to circle. At least you should keep the right traits in mind such that such an extension is easily possible.
 
 Here are some useful tools for this exercise:
 ```scala
-Math.Pi //will give you the exact value of Pi
-Math.pow(base,exponent) //this is the exponentiation function in scala
-Math.sqrt(x) //the square root
-Math.round(x*Math.pow(10,n))/Math.pow(10,n)// this will round the value x to n decimals
-length = diameter/(Math.sqrt(n)) //connection between length and diameter in an n-dimensional cube
+Math.Pi                                     // The exact value of Pi
+Math.pow(base, exponent)                    // The exponentiation function
+Math.sqrt(x)                                // The square root
+Math.round(x*Math.pow(10,n))/Math.pow(10,n) // This will round the value x to n decimals
+length = diameter/(Math.sqrt(n))            // Connection between length and diameter in an n-dimensional cube
 ```
 
-We encourage you to test your program by yourself. A good playground could be again a worksheet, where you imported the necessary files.
+We encourage you to test your program yourself. A good playground is again a worksheet, where you imported the necessary files.
 
 <details>
 <summary> Hint: Which classes and traits should I define </summary>
 The following is one of many solutions to this question:
 
 + an abstract class `Geometric` for all of our classes
-+ traits `planar` for `Circle` and `Square`, and `Spatial` for `Cube` (and a possible `Ball`) which all extend `Geometric`
++ traits `Planar` for `Circle` and `Square`, and `Spatial` for `Cube` (and a possible `Ball`) which all extend `Geometric`
 + classes `Square`, `Circle` and `Cube` which are all subclasses of `Geometric` and have the natural traits.
 </details><br/>
 
@@ -229,19 +229,19 @@ Since every geometric object in our case should have a diameter, dimension and v
 abstract class Geometric:
   def diameter: Double
   def dimension: Int
-  def volume(): Double
+  def volume: Double // for two-dimensional objects, volume is interpreted as the area
 ```
 
 The traits `planar` and `spatial` tell you in which dimension you are (so this is fixed in these traits), furthermore they can already decide which type your `quadrature` method should have (`Square` for the two dimensional and `Cube` for the three dimensional case)
 
 ```scala
-trait planar extends Geometric:
+trait Planar extends Geometric:
   def dimension = 2
-  def quadrature(): Square
+  def quadrature: Square
 
-trait spatial extends Geometric:
+trait Spatial extends Geometric:
   def dimension = 3
-  def quadrature(): Cube
+  def quadrature: Cube
 ```
 
 Because `Square` and `Cube` have an easy way to compute their volume we may implement this in our `rectangular` trait, which has access to a dimension as it extends Geometric. It might be useful to define an extra value `length`.
