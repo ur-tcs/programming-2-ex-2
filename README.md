@@ -1,4 +1,4 @@
-# Programming-2-Exercise-2
+# Programming-2 Exercise 2: Structural Recursion and Class Hierarchies
 In this exercise you will learn about structural recursion and classes in scala.
 * As in the first exercise you need to obtain the exercise files. Clone or fork the repository: `git clone https://github.com/ur-tcs/programming-2-ex-2.git` or download it by clicking on the green `<code>` button and select `download`.
 
