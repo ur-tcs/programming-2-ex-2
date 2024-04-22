@@ -267,30 +267,3 @@ object Circle {
 }
 ```
 </details><br/>
-
-### A string list
-
-We want to construct a class `stringList` that represents a sentence as a list of strings. A string list should be filled with strings and automatically saved as a sentence, such that the following function returns the content as syntactically correct sentence in the sense that the first word starts with a capital letter, the words are separated by whitespaces and the sentence ends with a point.
-
-```scala
-def printList(s : StringList) : String =
-  if s.isLast then 
-    s.current
-  else 
-    s.current + printList(s.rest)
-  end if
-}
-```
-The above functions will return "Make this sentence syntax." for the input " `First("make",Next("this", Next("sentence", Next("syntax",Last()))))`. By the choice of this minimal working example you will necessarily need to define at least the following:
- + classes `First`, `Next`, `Last`
- + a method `isLast`
- + values `current` and `rest` for the class `StringList`
-
-Note that you are not allowed to change the function `printList` in order to get the desired result.
-
-If you did not have a look on the exercises on recursion, looking at them first may help.
-
-<details>
-<summary> How do I start?/What's the connection to the exercises on recursion? </summary>
-The construction of our StringList is very similiar to IntList. The definition of the abstract class IntList can be found in the file "IntList.scala" of the exercise files on recursion. However only copying will just produce "makethissentencesyntax" as result. What can you change/add?
-</details><br/>
