@@ -192,6 +192,9 @@ In this exercises you will get familiar with (abstract) classes, traits, compani
 
 ### Geometric Objects
 
+**<font color="red">The material for this exercise is not covered by the lecture yet. You may do this exercise after the lecture next tuesday, 30.4.2024.</font>**
+
+
 We want to construct a class hierarchy of some geometric objects, namely circles, squares and cubes. Before we guide you through the exercise, here is what we want to implement in the end. You may try to implement this without further reading.
 
 + We want to implement three classes: `Circle`, `Square` and `Cube`.
