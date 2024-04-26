@@ -81,5 +81,5 @@ def treeShow(t: IntTree): String ={
 /*
  * How would you modify your function to collect the values in post-order?
  * Try comparing the execution of the original pre-order function
- * and the post-order variant on an example, using the substitution model.
+ * and the post-order variant on an example, using the substitution model from the first lecture.
  */
