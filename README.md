@@ -11,14 +11,16 @@ In this exercise you will learn about structural recursion and classes in scala.
 * The number of exercises is quite large, the exercises are provided for training purposes. Feel free to skip some of the simpler ones if you already have a good grasp on recursion and Scala programming!
 * For each function we provided a test. As for the first exercise you can run the tests by entering `sbt` while you are in your project directory, and then compiling your code using `compile`. To run all the tests use `test`. If you only want to run the test of a specific function use `testOnly -- "*function*"`, where function is the name of the function you want to test.
 
-For example you might find the following signature:
+For example you might find the following signature of the factorial function in the file `ExLists.scala`:
 ```scala
-// As a first step implement the faculty function n!=n*(n-1)*...*2*1
+// As a first step implement the factorial function n!=n*(n-1)*...*2*1
 def fac(n:Int) : Int = {
   ??? 
 }
 ```
 After you replaced the `???` by the correct code you might run `compile` and `testOnly -- "*fac*"`. In this case this will test if fac(6)==6 * 5 * 4 * 3 * 2 * 1. In particular a correct test does not necessarily mean that you implemented the correct function (you might also pass the test by replacing `???` by `720`).
+
+You can go on implementing the other functions in this file. The necessary background on Lists is given below.
 
 Note that the syntax of scala does not require to specify the return type of the function, but for your convenience we already gave it.
 Furthermore the curly braces are not necessary to mark the body of the function if you have the right spacing.
@@ -104,8 +106,14 @@ scala> polishEval(expr2)._1
 val res41: Int = 32
 ```
 
+polishEval is supposed to return a pair which consists of an Integer, which will be our result and an IntList which is necessary for the recursive calls.
+
+You are now prepared to solve the exercises in the file `ExLists.scala` and implement the corresponding functions.
+
 ### Lists as Sets
-Lists are ordered collections of objects; as a result, most set operations can be defined on them too. There is no additional explanation needed to solve the corresponding exercises.
+Lists are ordered collections of objects; as a result, most set operations can be defined on them too. There is no additional explanation needed to solve the corresponding exercises.  
+
+You are now prepared to solve the exercises in the file `ExListsAsSets.scala` and implement the corresponding functions.
 
 ### Recursion on Trees
 Now, we’ll explore recursion on binary trees. A binary tree is a tree where each node has at most two children. An `IntTree` can be either:
@@ -161,6 +169,8 @@ scala> tree.right.isEmpty
 val res22: Boolean = true
 ```
 
+You are now prepared to solve the exercises in the file `ExTrees.scala` and implement the corresponding functions.
+
 ### Recursion on Strings
 
 In this exercise, you will write recursive functions that operate on strings. A string can be thought of as a list of characters. Like lists, we can apply the same structural recursion principles to strings. Each string has the `isEmpty`, `head` and `tail` methods similar to `IntList`:
@@ -185,6 +195,8 @@ val res29: Boolean = true
 Note the type of the `head` method: it returns a Char, not a String. A Char is a single character, whereas a String is a sequence of characters. A String is surrounded by double quotes (e.g. "This is a String"), whereas a Char is surrounded by single quotes (e.g. 'c').
 
 For the respective exercises, you must not use any other method than `isEmpty`, `head` and `tail` on strings.
+
+You are now prepared to solve the exercises in the file `ExStrings.scala` and implement the corresponding functions.
 
 ## Classes
 

@@ -6,7 +6,7 @@ package recursion
  * README file of the exercise.
  */
 
-// As a first step implement the faculty function n!=n*(n-1)*...*2*1
+// As a first step implement the factorial function n!=n*(n-1)*...*2*1
 def fac(n:Int):Int={
   ???
 }
